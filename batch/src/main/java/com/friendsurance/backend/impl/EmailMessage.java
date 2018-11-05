@@ -1,16 +1,7 @@
-/**
- * 
- */
 package com.friendsurance.backend.impl;
 
 import com.friendsurance.mail.EmailRecipient;
 
-/**
- * the result of processing
- * 
- * @author durrah
- *
- */
 public class EmailMessage {
 
 	private EmailRecipient recipient;
