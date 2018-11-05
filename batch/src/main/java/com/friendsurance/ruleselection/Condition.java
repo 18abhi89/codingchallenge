@@ -1,4 +1,4 @@
-package com.friendsurance.impl.rules.model;
+package com.friendsurance.ruleselection;
 
 /**
  * the condition part/s of the rule

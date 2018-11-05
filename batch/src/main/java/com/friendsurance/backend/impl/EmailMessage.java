@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.friendsurance.impl.model;
+package com.friendsurance.backend.impl;
 
 import com.friendsurance.mail.EmailRecipient;
 
@@ -11,15 +11,15 @@ import com.friendsurance.mail.EmailRecipient;
  * @author durrah
  *
  */
-public class PendingMessage {
+public class EmailMessage {
 
 	private EmailRecipient recipient;
 	private int ruleOutput;
 
-	public PendingMessage() {
+	public EmailMessage() {
 	}
 
-	public PendingMessage(EmailRecipient recipient, int ruleOutput) {
+	public EmailMessage(EmailRecipient recipient, int ruleOutput) {
 		super();
 		this.recipient = recipient;
 		this.ruleOutput = ruleOutput;
@@ -33,6 +33,6 @@ public class PendingMessage {
 		return ruleOutput;
 	}
 
-	public static class PoisonPillPendingMessage extends PendingMessage {
+	public static class PoisonPillPendingMessage extends EmailMessage {
 	}
 }

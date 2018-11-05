@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.friendsurance.impl.process;
+package com.friendsurance.processing.impl;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.friendsurance.impl.model.Member;
+import com.friendsurance.backend.impl.FriendsuranceUser;
 import com.friendsurance.processing.ItemReader;
 
 /**
@@ -16,7 +16,7 @@ import com.friendsurance.processing.ItemReader;
  * @author durrah
  *
  */
-public class FileItemReader implements ItemReader<Member> {
+public class FileItemReader implements ItemReader<FriendsuranceUser> {
 	private BufferedReader reader;
 
 	public FileItemReader(String filePath) throws IOException {
@@ -24,15 +24,15 @@ public class FileItemReader implements ItemReader<Member> {
 	}
 
 	@Override
-	public Member read() {
-		Member member = null;
+	public FriendsuranceUser read() {
+		FriendsuranceUser member = null;
 		try {
 			String line = reader.readLine();
 			if (line == null) {
 				reader.close();
-				return new Member.NullMember("", false, 0, 0);
+				return new FriendsuranceUser.NullMember("", false, 0, 0);
 			}
-			member = Member.fromString(line);
+			member = FriendsuranceUser.fromString(line);
 		} catch (Exception e) {
 			// ignore
 		}

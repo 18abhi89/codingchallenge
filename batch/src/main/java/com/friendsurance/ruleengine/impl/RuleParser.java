@@ -1,7 +1,7 @@
-package com.friendsurance.impl.rules;
+package com.friendsurance.ruleengine.impl;
 
 import com.friendsurance.exception.RuleParseException;
-import com.friendsurance.impl.rules.model.Rule;
+import com.friendsurance.ruleselection.Rule;
 
 /**
  * the interface to create rules from a String

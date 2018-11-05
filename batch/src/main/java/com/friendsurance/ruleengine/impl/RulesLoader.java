@@ -1,11 +1,11 @@
-package com.friendsurance.impl.rules;
+package com.friendsurance.ruleengine.impl;
 
 import java.io.BufferedReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.friendsurance.impl.rules.model.Rule;
+import com.friendsurance.ruleselection.Rule;
 
 /**
  * reads rules from a file and returns a list of {@link Rule} objects

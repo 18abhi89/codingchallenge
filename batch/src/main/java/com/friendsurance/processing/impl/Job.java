@@ -1,16 +1,16 @@
 /**
  * 
  */
-package com.friendsurance.impl.process;
+package com.friendsurance.processing.impl;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.concurrent.BlockingQueue;
 
+import com.friendsurance.backend.impl.EmailMessage;
+import com.friendsurance.backend.impl.FriendsuranceUser;
 import com.friendsurance.exception.JobExecutionException;
-import com.friendsurance.impl.model.Member;
-import com.friendsurance.impl.model.PendingMessage;
 import com.friendsurance.processing.ItemReader;
 import com.friendsurance.processing.ItemWriter;
 
@@ -23,16 +23,16 @@ public class Job {
 			.getPath();
 	private String usersData = BatchMailSchedule.class.getClassLoader().getResource("com/friendsurance/impl/users.data")
 			.getPath();
-	BlockingQueue<PendingMessage> messages;
+	BlockingQueue<EmailMessage> messages;
 
-	public Job(BlockingQueue<PendingMessage> messages) {
+	public Job(BlockingQueue<EmailMessage> messages) {
 		this.messages = messages;
 	}
 
 	public void execute() throws JobExecutionException {
-		ItemWriter<PendingMessage> writer = new BlockingQueueItemWriter(messages);
+		ItemWriter<EmailMessage> writer = new BlockingQueueItemWriter(messages);
 		try {
-			ItemReader<Member> reader = new FileItemReader(usersData);
+			ItemReader<FriendsuranceUser> reader = new FileItemReader(usersData);
 			Reader rulesReader = new FileReader(rulesPath);
 			MembershipProcess mailer = new MembershipProcess(reader, writer, rulesReader);
 

@@ -1,15 +1,15 @@
 /**
  * 
  */
-package com.friendsurance.impl.process;
+package com.friendsurance.processing.impl;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Logger;
 
+import com.friendsurance.backend.impl.EmailMessage;
 import com.friendsurance.exception.JobExecutionException;
-import com.friendsurance.impl.mail.BlockingQueueEmailService;
-import com.friendsurance.impl.model.PendingMessage;
+import com.friendsurance.mail.impl.FriendsuranceEmailService;
 
 /**
  * @author durrah
@@ -23,9 +23,9 @@ public class BatchMailSchedule {
 	 */
 	public static void main(String[] args) {
 
-		BlockingQueue<PendingMessage> messages = new LinkedBlockingQueue<PendingMessage>();
+		BlockingQueue<EmailMessage> messages = new LinkedBlockingQueue<EmailMessage>();
 
-		BlockingQueueEmailService emailService = new BlockingQueueEmailService(messages);
+		FriendsuranceEmailService emailService = new FriendsuranceEmailService(messages);
 		Thread emailServiceThread = new Thread(emailService, "EmailService Thread");
 		emailServiceThread.start();
 

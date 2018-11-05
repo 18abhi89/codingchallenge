@@ -1,21 +1,21 @@
 /**
  * 
  */
-package com.friendsurance.impl.process;
+package com.friendsurance.processing.impl;
 
 import java.io.Reader;
 import java.util.SortedSet;
 
-import com.friendsurance.impl.model.Member;
-import com.friendsurance.impl.model.Member.NullMember;
-import com.friendsurance.impl.model.PendingMessage;
-import com.friendsurance.impl.model.PendingMessage.PoisonPillPendingMessage;
-import com.friendsurance.impl.rules.RegexRuleParser;
-import com.friendsurance.impl.rules.RuleEngine;
-import com.friendsurance.impl.rules.model.Rule;
+import com.friendsurance.backend.impl.EmailMessage;
+import com.friendsurance.backend.impl.FriendsuranceUser;
+import com.friendsurance.backend.impl.EmailMessage.PoisonPillPendingMessage;
+import com.friendsurance.backend.impl.FriendsuranceUser.NullMember;
 import com.friendsurance.processing.ItemProcessing;
 import com.friendsurance.processing.ItemReader;
 import com.friendsurance.processing.ItemWriter;
+import com.friendsurance.ruleengine.impl.RegexRuleParser;
+import com.friendsurance.ruleengine.impl.RuleEngine;
+import com.friendsurance.ruleselection.Rule;
 
 /**
  * item process implementer
@@ -23,11 +23,11 @@ import com.friendsurance.processing.ItemWriter;
  * @author durrah
  *
  */
-public class MembershipProcess extends ItemProcessing<Member, PendingMessage> {
+public class MembershipProcess extends ItemProcessing<FriendsuranceUser, EmailMessage> {
 	private RuleEngine ruleEngine;
 	private Reader rulesReader;
 
-	protected MembershipProcess(ItemReader<Member> reader, ItemWriter<PendingMessage> writer, Reader rulesReader) {
+	protected MembershipProcess(ItemReader<FriendsuranceUser> reader, ItemWriter<EmailMessage> writer, Reader rulesReader) {
 		super(reader, writer);
 		this.rulesReader = rulesReader;
 	}
@@ -40,7 +40,7 @@ public class MembershipProcess extends ItemProcessing<Member, PendingMessage> {
 	}
 
 	@Override
-	protected PendingMessage process(Member item) {
+	protected EmailMessage process(FriendsuranceUser item) {
 		/**
 		 * 
 		 */
@@ -50,7 +50,7 @@ public class MembershipProcess extends ItemProcessing<Member, PendingMessage> {
 		if (appl.isEmpty()) {
 			return null;
 		}
-		return new PendingMessage(item, appl.first().getApplyResult());
+		return new EmailMessage(item, appl.first().getApplyResult());
 	}
 
 	protected void stop() {

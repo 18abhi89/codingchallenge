@@ -1,4 +1,4 @@
-package com.friendsurance.impl.rules;
+package com.friendsurance.ruleengine.impl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 import com.friendsurance.exception.InvalidConditionException;
 import com.friendsurance.exception.InvalidRuleSyntaxException;
 import com.friendsurance.exception.RuleParseException;
-import com.friendsurance.impl.rules.model.Condition;
-import com.friendsurance.impl.rules.model.Operation;
-import com.friendsurance.impl.rules.model.Rule;
+import com.friendsurance.ruleselection.Condition;
+import com.friendsurance.ruleselection.Operation;
+import com.friendsurance.ruleselection.Rule;
 
 /**
  * our default rule parser which create rules from a given string by applying

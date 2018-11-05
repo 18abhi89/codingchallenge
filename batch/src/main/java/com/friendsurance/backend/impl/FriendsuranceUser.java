@@ -1,4 +1,4 @@
-package com.friendsurance.impl.model;
+package com.friendsurance.backend.impl;
 
 import com.friendsurance.backend.User;
 import com.friendsurance.exception.InvalidMemberSyntaxException;
@@ -11,9 +11,9 @@ import com.friendsurance.mail.EmailRecipient;
  * @author durrah
  *
  */
-public class Member extends User implements EmailRecipient {
+public class FriendsuranceUser extends User implements EmailRecipient {
 
-	public Member(String email, boolean hasContract, int friendsNumber, int sentInvitationsNumber) {
+	public FriendsuranceUser(String email, boolean hasContract, int friendsNumber, int sentInvitationsNumber) {
 		super(email, hasContract, friendsNumber, sentInvitationsNumber);
 	}
 
@@ -26,7 +26,7 @@ public class Member extends User implements EmailRecipient {
 	 *             either {@link InvalidMemberSyntaxException} or
 	 *             {@link NumberFormatException}
 	 */
-	public static Member fromString(String line) throws Exception {
+	public static FriendsuranceUser fromString(String line) throws Exception {
 		String[] items = line.split(",");
 		if (items.length < 4)
 			throw new InvalidMemberSyntaxException();
@@ -37,7 +37,7 @@ public class Member extends User implements EmailRecipient {
 		int friendsNumber = Integer.parseInt(friendsNumberString);
 		String sentInvitationsNumberString = items[2].trim();
 		int sentInvitationsNumber = Integer.parseInt(sentInvitationsNumberString);
-		return new Member(email, hasContract, friendsNumber, sentInvitationsNumber);
+		return new FriendsuranceUser(email, hasContract, friendsNumber, sentInvitationsNumber);
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class Member extends User implements EmailRecipient {
 	 * @author durrah
 	 *
 	 */
-	public static class NullMember extends Member {
+	public static class NullMember extends FriendsuranceUser {
 
 		public NullMember(String email, boolean hasContract, int friendsNumber, int sentInvitationsNumber) {
 			super(email, hasContract, friendsNumber, sentInvitationsNumber);

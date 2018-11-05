@@ -1,12 +1,12 @@
 /**
  * 
  */
-package com.friendsurance.impl.mail;
+package com.friendsurance.mail.impl;
 
 import java.util.concurrent.BlockingQueue;
 
-import com.friendsurance.impl.model.PendingMessage;
-import com.friendsurance.impl.model.PendingMessage.PoisonPillPendingMessage;
+import com.friendsurance.backend.impl.EmailMessage;
+import com.friendsurance.backend.impl.EmailMessage.PoisonPillPendingMessage;
 import com.friendsurance.mail.EmailRecipient;
 import com.friendsurance.mail.EmailService;
 
@@ -14,14 +14,14 @@ import com.friendsurance.mail.EmailService;
  * @author durrah
  *
  */
-public class BlockingQueueEmailService implements EmailService, Runnable {
+public class FriendsuranceEmailService implements EmailService, Runnable {
 
-	BlockingQueue<PendingMessage> messages;
+	BlockingQueue<EmailMessage> messages;
 
 	/**
 	 * 
 	 */
-	public BlockingQueueEmailService(BlockingQueue<PendingMessage> messages) {
+	public FriendsuranceEmailService(BlockingQueue<EmailMessage> messages) {
 		this.messages = messages;
 	}
 
@@ -41,7 +41,7 @@ public class BlockingQueueEmailService implements EmailService, Runnable {
 		}
 	}
 
-	private void processPendingMessage(PendingMessage message) throws InterruptedException {
+	private void processPendingMessage(EmailMessage message) throws InterruptedException {
 		if (message instanceof PoisonPillPendingMessage)
 			throw new InterruptedException("Posion Pill.. stop");
 		MailType type = MailType.values()[message.getRuleOutput()];

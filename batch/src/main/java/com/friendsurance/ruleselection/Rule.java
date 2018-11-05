@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.friendsurance.impl.rules.model;
+package com.friendsurance.ruleselection;
 
 import java.util.Comparator;
 

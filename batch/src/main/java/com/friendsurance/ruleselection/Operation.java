@@ -1,4 +1,4 @@
-package com.friendsurance.impl.rules.model;
+package com.friendsurance.ruleselection;
 
 /**
  * comparison operation in {@link Condition}

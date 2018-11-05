@@ -1,4 +1,4 @@
-package com.friendsurance.impl;
+package com.friendsurance.config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,11 +11,11 @@ import java.util.Properties;
  * @author durrah
  *
  */
-public class Configs {
+public class Configuration {
 	static Properties PROPERTIES = new Properties();
 
 	static {
-		InputStream is = Configs.class.getClassLoader().getResourceAsStream("com/friendsurance/impl/config.properties");
+		InputStream is = Configuration.class.getClassLoader().getResourceAsStream("com/friendsurance/impl/config.properties");
 		try {
 			PROPERTIES.load(is);
 		} catch (IOException e) {

@@ -1,4 +1,4 @@
-package com.friendsurance.impl.rules;
+package com.friendsurance.ruleengine.impl;
 
 import java.io.Reader;
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ import java.util.TreeSet;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 import com.friendsurance.backend.User;
-import com.friendsurance.impl.rules.model.Rule;
-import com.friendsurance.impl.rules.model.Rule.RuleMaxPriorityComparator;
+import com.friendsurance.ruleselection.Rule;
+import com.friendsurance.ruleselection.Rule.RuleMaxPriorityComparator;
 
 /**
  * a simple rule engine, with a concurrent set of rules, we start the engine by
