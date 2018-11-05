@@ -1,6 +1,7 @@
 package com.friendsurance.impl.model;
 
 import com.friendsurance.backend.User;
+import com.friendsurance.exception.InvalidMemberSyntaxException;
 import com.friendsurance.mail.EmailRecipient;
 
 /**

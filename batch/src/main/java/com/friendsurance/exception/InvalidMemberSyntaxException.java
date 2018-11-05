@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.friendsurance.impl.model;
+package com.friendsurance.exception;
 
 /**
  * @author durrah

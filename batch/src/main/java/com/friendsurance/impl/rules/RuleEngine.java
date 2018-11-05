@@ -1,6 +1,5 @@
 package com.friendsurance.impl.rules;
 
-import java.io.FileReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,7 +10,6 @@ import java.util.TreeSet;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 import com.friendsurance.backend.User;
-import com.friendsurance.impl.Configs;
 import com.friendsurance.impl.rules.model.Rule;
 import com.friendsurance.impl.rules.model.Rule.RuleMaxPriorityComparator;
 
@@ -25,7 +23,6 @@ import com.friendsurance.impl.rules.model.Rule.RuleMaxPriorityComparator;
  */
 public class RuleEngine {
 	private final Set<Rule> rules = new CopyOnWriteArraySet<Rule>();
-	private RulesWatchDog rulesWatchDogService;
 	private RulesLoader rulesLoader;
 	private RuleParser ruleParser;
 	private Reader rulesContentReader;
@@ -33,7 +30,6 @@ public class RuleEngine {
 	public RuleEngine(Builder builder) {
 		this.ruleParser = builder.ruleParser;
 		this.rulesLoader = new RulesLoader(ruleParser);
-		this.rulesWatchDogService = builder.rulesWatchDogService;
 		this.rulesContentReader = builder.rulesContentReader;
 	}
 
@@ -42,13 +38,9 @@ public class RuleEngine {
 	 */
 	public void start() {
 		loadRules();
-		if (rulesWatchDogService != null)
-			rulesWatchDogService.start();
 	}
 
 	public void stop() {
-		if (rulesWatchDogService != null)
-			rulesWatchDogService.interrupt();
 	}
 
 	public Set<Rule> getRules() {
@@ -96,18 +88,8 @@ public class RuleEngine {
 	 *
 	 */
 	public static class Builder {
-		private RulesWatchDog rulesWatchDogService;
 		private RuleParser ruleParser;
 		private Reader rulesContentReader;
-
-		public RulesWatchDog getRulesWatchDogService() {
-			return rulesWatchDogService;
-		}
-
-		public Builder setRulesWatchDogService(RulesWatchDog rulesWatchDogService) {
-			this.rulesWatchDogService = rulesWatchDogService;
-			return this;
-		}
 
 		public RuleParser getRuleParser() {
 			return ruleParser;

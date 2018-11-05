@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.friendsurance.impl.rules.model;
+package com.friendsurance.exception;
 
 /**
  * root exception represents an error in parsing rule

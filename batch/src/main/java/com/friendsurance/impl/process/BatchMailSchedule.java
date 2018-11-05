@@ -7,6 +7,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Logger;
 
+import com.friendsurance.exception.JobExecutionException;
 import com.friendsurance.impl.mail.BlockingQueueEmailService;
 import com.friendsurance.impl.model.PendingMessage;
 

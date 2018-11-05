@@ -3,10 +3,10 @@ package com.friendsurance;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.friendsurance.exception.InvalidRuleSyntaxException;
 import com.friendsurance.impl.rules.RegexRuleParser;
 import com.friendsurance.impl.rules.RuleParser;
 import com.friendsurance.impl.rules.model.Condition;
-import com.friendsurance.impl.rules.model.InvalidRuleSyntaxException;
 import com.friendsurance.impl.rules.model.Operation;
 import com.friendsurance.impl.rules.model.Rule;
 import static org.junit.Assert.*;

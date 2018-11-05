@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.concurrent.BlockingQueue;
 
+import com.friendsurance.exception.JobExecutionException;
 import com.friendsurance.impl.model.Member;
 import com.friendsurance.impl.model.PendingMessage;
 import com.friendsurance.processing.ItemReader;

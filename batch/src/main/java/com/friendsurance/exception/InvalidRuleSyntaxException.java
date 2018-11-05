@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.friendsurance.impl.rules.model;
+package com.friendsurance.exception;
 
 /**
  * an exception represents a malformed rule syntax
