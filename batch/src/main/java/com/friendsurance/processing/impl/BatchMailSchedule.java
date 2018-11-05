@@ -12,7 +12,7 @@ import com.friendsurance.exception.JobExecutionException;
 import com.friendsurance.mail.impl.FriendsuranceEmailService;
 
 /**
- * @author durrah
+ * @author abhishek
  *
  */
 public class BatchMailSchedule {

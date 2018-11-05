@@ -6,7 +6,7 @@ package com.friendsurance.exception;
 /**
  * root exception represents an error in parsing rule
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class RuleParseException extends Exception {

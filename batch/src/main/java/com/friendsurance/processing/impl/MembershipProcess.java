@@ -13,14 +13,14 @@ import com.friendsurance.backend.impl.FriendsuranceUser.NullMember;
 import com.friendsurance.processing.ItemProcessing;
 import com.friendsurance.processing.ItemReader;
 import com.friendsurance.processing.ItemWriter;
-import com.friendsurance.ruleengine.impl.RegexRuleParser;
-import com.friendsurance.ruleengine.impl.RuleEngine;
+import com.friendsurance.ruleengine.RegexRuleParser;
+import com.friendsurance.ruleengine.RuleEngine;
 import com.friendsurance.ruleselection.Rule;
 
 /**
  * item process implementer
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class MembershipProcess extends ItemProcessing<FriendsuranceUser, EmailMessage> {

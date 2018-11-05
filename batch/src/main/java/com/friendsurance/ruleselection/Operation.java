@@ -3,7 +3,7 @@ package com.friendsurance.ruleselection;
 /**
  * comparison operation in {@link Condition}
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public enum Operation {

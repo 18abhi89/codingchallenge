@@ -4,10 +4,15 @@
 package com.friendsurance.exception;
 
 /**
- * @author durrah
+ * @author abhishek
  *
  */
 public class InvalidMemberSyntaxException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 

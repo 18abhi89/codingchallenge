@@ -1,4 +1,4 @@
-package com.friendsurance.ruleengine.impl;
+package com.friendsurance.ruleengine;
 
 import java.io.Reader;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import com.friendsurance.ruleselection.Rule.RuleMaxPriorityComparator;
  * loading the initial rules, and also we start the WatchDog Service (if
  * provided by the builder)
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class RuleEngine {
@@ -84,7 +84,7 @@ public class RuleEngine {
 	 * parameters this build class helps to make the initialization process
 	 * easier
 	 * 
-	 * @author durrah
+	 * @author abhishek
 	 *
 	 */
 	public static class Builder {

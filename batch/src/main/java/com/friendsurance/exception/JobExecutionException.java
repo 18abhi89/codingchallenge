@@ -4,7 +4,7 @@
 package com.friendsurance.exception;
 
 /**
- * @author durrah
+ * @author abhishek
  *
  */
 public class JobExecutionException extends Exception {

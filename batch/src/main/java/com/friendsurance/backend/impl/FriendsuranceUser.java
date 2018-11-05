@@ -8,7 +8,7 @@ import com.friendsurance.mail.EmailRecipient;
  * member is a class that combines {@link User} and {@link EmailRecipient}
  * functionalities
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class FriendsuranceUser extends User implements EmailRecipient {
@@ -43,7 +43,7 @@ public class FriendsuranceUser extends User implements EmailRecipient {
 	/**
 	 * indicate that the input data read finished
 	 * 
-	 * @author durrah
+	 * @author abhishek
 	 *
 	 */
 	public static class NullMember extends FriendsuranceUser {

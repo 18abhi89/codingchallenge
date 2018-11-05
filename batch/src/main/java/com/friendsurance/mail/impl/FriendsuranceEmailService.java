@@ -11,7 +11,7 @@ import com.friendsurance.mail.EmailRecipient;
 import com.friendsurance.mail.EmailService;
 
 /**
- * @author durrah
+ * @author abhishek
  *
  */
 public class FriendsuranceEmailService implements EmailService, Runnable {

@@ -1,4 +1,4 @@
-package com.friendsurance.ruleengine.impl;
+package com.friendsurance.ruleengine;
 
 import com.friendsurance.exception.RuleParseException;
 import com.friendsurance.ruleselection.Rule;
@@ -6,7 +6,7 @@ import com.friendsurance.ruleselection.Rule;
 /**
  * the interface to create rules from a String
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public interface RuleParser {

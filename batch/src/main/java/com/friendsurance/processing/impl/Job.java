@@ -15,7 +15,7 @@ import com.friendsurance.processing.ItemReader;
 import com.friendsurance.processing.ItemWriter;
 
 /**
- * @author durrah
+ * @author abhishek
  *
  */
 public class Job {

@@ -13,7 +13,7 @@ import com.friendsurance.processing.ItemReader;
 /**
  * read user information from a flat file line by line
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class FileItemReader implements ItemReader<FriendsuranceUser> {

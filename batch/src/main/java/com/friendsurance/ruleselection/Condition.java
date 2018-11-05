@@ -3,7 +3,7 @@ package com.friendsurance.ruleselection;
 /**
  * the condition part/s of the rule
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class Condition {

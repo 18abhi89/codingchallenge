@@ -1,4 +1,4 @@
-package com.friendsurance.ruleengine.impl;
+package com.friendsurance.ruleengine;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,7 +27,7 @@ import com.friendsurance.ruleselection.Rule;
  * 0 & > 2 & = 0 => 2<br/>
  * 0 & > 2 => 5
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class RegexRuleParser implements RuleParser {

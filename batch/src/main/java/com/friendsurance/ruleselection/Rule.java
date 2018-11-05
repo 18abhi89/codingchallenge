@@ -10,7 +10,7 @@ import com.friendsurance.backend.User;
 /**
  * the rule of determining the type of the email to be sent.
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class Rule {
@@ -109,7 +109,7 @@ public class Rule {
 	/**
 	 * comparator to sort rules by result (priority) in descent order
 	 * 
-	 * @author durrah
+	 * @author abhishek
 	 *
 	 */
 	public static class RuleMaxPriorityComparator implements Comparator<Rule> {

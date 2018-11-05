@@ -1,4 +1,4 @@
-package com.friendsurance.ruleengine.impl;
+package com.friendsurance.ruleengine;
 
 import java.io.BufferedReader;
 import java.io.Reader;
@@ -10,7 +10,7 @@ import com.friendsurance.ruleselection.Rule;
 /**
  * reads rules from a file and returns a list of {@link Rule} objects
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class RulesLoader {

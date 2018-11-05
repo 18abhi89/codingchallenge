@@ -8,7 +8,7 @@ import java.util.Properties;
  * application configuration handler, load configurations from a property file
  * configurations may be: rules folder, input folder, output folder,
  * 
- * @author durrah
+ * @author abhishek
  *
  */
 public class Configuration {
